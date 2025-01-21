@@ -35,12 +35,31 @@
 
 
 ## Installation
+### Direct Download
 Download or clone the repo of [FitDiT-ComfyUI branch](https://github.com/BoyuanJiang/FitDiT/tree/FitDiT-ComfyUI) and place it in the `ComfyUI/custom_nodes/` directory, you can follow the following steps:
 
 1. goto `ComfyUI/custom_nodes` dir in terminal(cmd)
 2. `git clone https://github.com/BoyuanJiang/FitDiT.git -b FitDiT-ComfyUI FitDiT`
 3. Restart ComfyUI
 
+### ComfyUI-Manager
+You can also use [ComfyUI-Manager](https://github.com/lllyasviel/ComfyUI-Manager) to install FitDiT by searching `FitDiT[official]` in the ComfyUI-Manager.
+![ComfyUI-Manager](resource/img/ComfyUI-Manager.png)
+
+### Environment
+FItDiT was tested under the following environment, but other versions should also work. You can first use your own existing environment.
+- torch==2.4.0
+- torchvision==0.19.0 
+- accelerate==0.31.0
+- diffusers==0.31.0
+- transformers==4.39.3
+- numpy==1.23.0
+- scikit-image==0.24.0
+- huggingface_hub==0.26.5
+- onnxruntime==1.20.1
+- opencv-python
+- matplotlib==3.8.3
+- einops==0.7.0
 
 ## Download model
 Download the [**FitDiT model**](https://huggingface.co/BoyuanJiang/FitDiT) and place it in the `ComfyUI/models/FitDiT_models` directory, the  [**clip-vit-large-patch14**](https://huggingface.co/openai/clip-vit-large-patch14) and [**CLIP-ViT-bigG-14**](https://huggingface.co/laion/CLIP-ViT-bigG-14-laion2B-39B-b160k) and place them in the `ComfyUI/models/clip` directory.
@@ -52,8 +71,7 @@ python download_model.py --dir /path/to/ComfyUI/
 ```
 
 ## Example workflows
-[fitdit_workflow.json](fitdit_workflow.json) is the example workflow of FitDiT in ComfyUI. If you have less GPU memory, you can set `with_offload` or `with_aggressive_offload` to True.
-
+[fitdit_workflow.json](fitdit_workflow.json) is the example workflow of FitDiT in ComfyUI. If you have less GPU memory, you can set `with_offload` or `with_aggressive_offload` to True. Set `with_offload` to True with **moderate gpu memroty, moderate inference time**. Set `with_aggressive_offload` to True with **lowest gpu memroty, longest inference time**.
 ![workflow](resource/img/workflow.png)
 
 ## Star History

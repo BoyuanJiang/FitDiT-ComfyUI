@@ -79,10 +79,10 @@ class FitDiTLoader:
             image_encoder_bigG=image_encoder_bigG
         )
         pipeline.to(device)
-        if with_offload:
-            pipeline.enable_model_cpu_offload()
-        elif with_aggressive_offload:
+        if with_aggressive_offload:
             pipeline.enable_sequential_cpu_offload()
+        elif with_offload:
+            pipeline.enable_model_cpu_offload()
         pipeline.dwprocessor = DWposeDetector(model_root=os.path.join(folder_paths.models_dir, "FitDiT_models"), device='cpu')
         pipeline.parsing_model = Parsing(model_root=os.path.join(folder_paths.models_dir, "FitDiT_models"), device='cpu')
         return (pipeline,)
