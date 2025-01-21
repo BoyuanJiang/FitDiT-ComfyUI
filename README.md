@@ -71,8 +71,7 @@ python download_model.py --dir /path/to/ComfyUI/
 ```
 
 ## Example workflows
-[fitdit_workflow.json](fitdit_workflow.json) is the example workflow of FitDiT in ComfyUI. If you have less GPU memory, you can set `with_offload` or `with_aggressive_offload` to True.
-
+[fitdit_workflow.json](fitdit_workflow.json) is the example workflow of FitDiT in ComfyUI. If you have less GPU memory, you can set `with_offload` or `with_aggressive_offload` to True. Set `with_offload` to True with **moderate gpu memroty, moderate inference time**. Set `with_aggressive_offload` to True with **lowest gpu memroty, longest inference time**.
 ![workflow](resource/img/workflow.png)
 
 ## Star History
