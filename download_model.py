@@ -28,7 +28,7 @@ def download_models(root_dir: str = "./"):
         {
             "repo_id": "laion/CLIP-ViT-bigG-14-laion2B-39B-b160k",
             "relative_path": "models/clip/CLIP-ViT-bigG-14-laion2B-39B-b160k",
-            "ignore_patterns": ["*.md", "*.txt", "*.bin", "open_clip_pytorch_model.safetensors", ".gitattributes",]
+            "ignore_patterns": ["*.md", "*.txt", "*.safetensors", "open_clip_pytorch_model.bin", ".gitattributes",]
         }
     ]
 
